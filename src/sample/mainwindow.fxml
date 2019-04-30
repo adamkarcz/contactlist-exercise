@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="mainGridPane" alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <TableView fx:id="tableView" prefHeight="300.0" prefWidth="600.0" GridPane.rowIndex="1">
+        <columns>
+          <TableColumn fx:id="columnFirstName" prefWidth="-1.0" text="First Name" />
+          <TableColumn fx:id="columnLastName" prefWidth="-1.0" text="Last Name" />
+            <TableColumn fx:id="columnPhoneNumber" prefWidth="-1.0" text="Phone Number" />
+            <TableColumn fx:id="columnNotes" prefWidth="-1.0" text="Notes" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Contacts">
+            <items>
+                  <MenuItem fx:id="menuAdd" mnemonicParsing="false" onAction="#handleAdd" text="Add" />
+              <MenuItem fx:id="menuEdit" mnemonicParsing="false" onAction="#handleEdit" text="Edit" />
+                  <MenuItem fx:id="menuDelete" mnemonicParsing="false" onAction="#handleDelete" text="Delete" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</GridPane>
