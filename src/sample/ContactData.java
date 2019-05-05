@@ -53,7 +53,6 @@ public class ContactData {
         contacts.remove(contact);
     }
 
-    // *** Add methods to add/delete/access contacts here ***
 
     public void loadContacts() {
         try {

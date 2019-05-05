@@ -2,13 +2,13 @@
 <contacts>
 <contact>
 	<first_name>Marta</first_name>
-	<last_name>Najgebauer</last_name>
+	<last_name>Testowa</last_name>
 	<phone_number>789</phone_number>
 	<notes>aaa</notes>
 </contact>
 <contact>
 	<first_name>Marcin</first_name>
-	<last_name>Klauza</last_name>
+	<last_name>Próbny</last_name>
 	<phone_number>69874</phone_number>
 	<notes>kolega</notes>
 </contact>
@@ -20,8 +20,8 @@
 </contact>
 <contact>
 	<first_name>Adam</first_name>
-	<last_name>Karcz</last_name>
-	<phone_number>509908413</phone_number>
+	<last_name>Testowy</last_name>
+	<phone_number>+481234567</phone_number>
 	<notes>proba5</notes>
 </contact>
 <contact>

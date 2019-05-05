@@ -71,7 +71,7 @@ public class Controller {
         Optional<ButtonType> result = dialog.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             AddController addController = fxmlLoader.getController();
-            Contact newItem = addController.processResult();
+            Contact newItem = addController.addContact();
             tableView.getSelectionModel().select(newItem);
         }
     }
@@ -83,7 +83,7 @@ public class Controller {
         dialog.setTitle("Edit Contact");
         dialog.setHeaderText("Use this dialog to edit Contact");
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("editwindow.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("addwindow.fxml"));
 
         try {
             dialog.getDialogPane().setContent(fxmlLoader.load());
@@ -94,7 +94,7 @@ public class Controller {
             return;
         }
 
-        EditController editController = fxmlLoader.getController();
+        AddController editController = fxmlLoader.getController();
         editController.setContact(tableView.getSelectionModel().getSelectedItem());
 
         dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
@@ -106,7 +106,7 @@ public class Controller {
 
         if (result.isPresent() && result.get() == ButtonType.OK) {
             Contact editContact = tableView.getSelectionModel().getSelectedItem();
-            editController.processResult(editContact);
+            editController.editContact(editContact);
             tableView.refresh();
         }
     }
@@ -116,7 +116,6 @@ public class Controller {
         Contact contact = tableView.getSelectionModel().getSelectedItem();
         deleteItem(contact);
     }
-
 
     public void  deleteItem(Contact contact){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -128,5 +127,4 @@ public class Controller {
             ContactData.getInstance().deleteContact(contact);
         }
     }
-
 }

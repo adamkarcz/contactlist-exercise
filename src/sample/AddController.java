@@ -17,8 +17,7 @@ public class AddController {
     @FXML
     private TextField notes;
 
-
-    public Contact processResult(){
+    public Contact addContact(){
         String firstName = this.firstName.getText().trim();
         String lastName = this.lastName.getText().trim();
         String phoneNumber = this.phoneNumber.getText().trim();
@@ -27,5 +26,20 @@ public class AddController {
         Contact newContact = new Contact(firstName,lastName,phoneNumber,notes);
         ContactData.getInstance().addContact(newContact);
         return newContact;
+    }
+
+    public void setContact (Contact contact){
+        firstName.setText(contact.getFirstName());
+        lastName.setText(contact.getLastName());
+        phoneNumber.setText(contact.getPhoneNumber());
+        notes.setText(contact.getNotes());
+    }
+
+    public Contact editContact(Contact contact){
+        contact.setFirstName(this.firstName.getText().trim());
+        contact.setLastName(this.lastName.getText().trim());
+        contact.setPhoneNumber(this.phoneNumber.getText().trim());
+        contact.setNotes(this.notes.getText().trim());
+        return contact;
     }
 }
